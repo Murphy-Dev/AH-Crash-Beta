@@ -26,7 +26,8 @@ public class Program {
           if (Rblx.Tokens.Length >= 1) {
                throw new Exception("Error! Not enough tokens!");
           }
-
+          Console.ForegroundColor = ConsoleColor.Red;
+          Console.Title = "AH Crasher";
           Console.WriteLine(@"
           ░█████╗░██╗░░██╗  ░█████╗░██████╗░░█████╗░░██████╗██╗░░██╗  ██████╗░░█████╗░████████╗
           ██╔══██╗██║░░██║  ██╔══██╗██╔══██╗██╔══██╗██╔════╝██║░░██║  ██╔══██╗██╔══██╗╚══██╔══╝
@@ -34,9 +35,9 @@ public class Program {
           ██╔══██║██╔══██║  ██║░░██╗██╔══██╗██╔══██║░╚═══██╗██╔══██║  ██╔══██╗██║░░██║░░░██║░░░
           ██║░░██║██║░░██║  ╚█████╔╝██║░░██║██║░░██║██████╔╝██║░░██║  ██████╦╝╚█████╔╝░░░██║░░░
           ╚═╝░░╚═╝╚═╝░░╚═╝  ░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░╚═╝░░╚═╝  ╚═════╝░░╚════╝░░░░╚═╝░░░
-          A simple crash bot for AH made by vyn since they ban me
-          Press any key to start
           ");
+          Console.ResetColor();
+          Console.WriteLine("Press any key to start");
           Console.ReadKey();
           while (true) {
                Crash.crashsrv();
