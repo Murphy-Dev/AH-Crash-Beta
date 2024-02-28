@@ -38,7 +38,7 @@ public static class Crash {
         Type cookiesType = cookiesObject.GetType();
         MethodInfo addCookieMethod = cookiesType.GetMethod("AddCookie");
         addCookieMethod.Invoke(cookiesObject, new object[] { new OpenQA.Selenium.Cookie("RBLXSECURITY", cookie) });
-
+        // ai part end
         using (HttpClient client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate })) {
             client.BaseAddress = new Uri("https://games.roblox.com/v1/games/333164326/servers/");
             HttpResponseMessage resp = client.GetAsync("Public?sortOrder=Desc&excludeFullGames=true&limit=10").Result;
