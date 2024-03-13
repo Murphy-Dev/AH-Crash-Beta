@@ -14,7 +14,7 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Threading;
 public static class Crash {
-    static string[] servers = new string[0];
+    static List<string> servers = new();
     static string[] unused = Rblx.Tokens;
     static bool completed = false;
 
@@ -47,12 +47,10 @@ public static class Crash {
             var data = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(txt);
             string[] possible = new string[0];
             foreach (var srv in data["data"]) {
-                int i =  0;
                 foreach (var val in servers) {
                     if (val != srv["id"]) {
-                        possible[i] = srv["id"];
+                        possible.append(srv["id"]);
                     }
-                    i +=  1;
                 }
             }
 
