@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
@@ -18,12 +18,12 @@ public class Program {
 
           {
                Process[] processes = Process.GetProcessesByName("rbxfpsunlocker.exe");
-               if (processes.Length >= 1) {
+               if (processes.Length < 1) {
                     throw new Exception("Error! Roblox FPS Unlocker must be running for this crasher to work");
                }
           }
 
-          if (Rblx.Tokens.Length >= 1) {
+          if (Rblx.Tokens.Length < 1) {
                throw new Exception("Error! Not enough tokens!");
           }
           Console.ForegroundColor = ConsoleColor.Red;
