@@ -45,7 +45,7 @@ public static class Crash {
             resp.EnsureSuccessStatusCode();
             string txt = resp.Content.ReadAsStringAsync().Result;
             var data = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(txt);
-            string[] possible = new string[0];
+            List<string> possible = new();
             foreach (var srv in data["data"]) {
                 foreach (var val in servers) {
                     if (val != srv["id"]) {
