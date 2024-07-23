@@ -15,7 +15,7 @@ public static class Rblx {
      static string? readf(string fname) {
           string content = "";
           FileStream file = new FileStream(fname, FileMode.Open, FileAccess.Read, FileShare.Read);
-          for (int bit = file.ReadByte(); file != null;) {
+          for (int bit = file.ReadByte(); bit != null;) { // accidentally put file instead of bit
                content.Append<char>(System.Convert.ToChar(bit));
           }
           return content != "" ? content : null;
